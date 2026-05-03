@@ -52,14 +52,11 @@ WHERE date_of_birth > CURRENT_DATE;
 -- DATA QUALITY SUMMARY
 SELECT 
     COUNT(*) AS total_records,
-
     COUNT(*) FILTER (WHERE email IS NULL) AS missing_email,
-
     ROUND(
         COUNT(*) FILTER (WHERE email IS NULL) * 100.0 / COUNT(*),
         2
     ) AS missing_email_pct,
-
     COUNT(*) FILTER (
         WHERE (first_name, last_name, date_of_birth) IN (
             SELECT first_name, last_name, date_of_birth
@@ -68,5 +65,4 @@ SELECT
             HAVING COUNT(*) > 1
         )
     ) AS duplicate_records
-
 FROM patients;
