@@ -19,10 +19,11 @@ Designed and implemented a data quality monitoring workflow that:
 * Automates the workflow using a reusable pipeline script
 
 ## Architecture
+
 Python → CSV → PostgreSQL → SQL Checks → Power BI Dashboard
 
 Key Insights Delivered
-* ~15% of patient records missing email → risk to communication workflows
+* 15.62%(Before Scaling) and 14.91(After Scaling) of patient records missing email → risk to communication workflows
 * Duplicate patient entries detected based on name + DOB
 * Invalid data entries (e.g., gender, future DOB) identified
 * Overall data quality score highlights system health at a glance
